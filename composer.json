@@ -1,0 +1,29 @@
+{
+    "name": "nouralhadi/stemmer",
+    "description": "The first free open source Arabic stemmer ever written in PHP implementing ISRI algorithm",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Nour Alhadi Mahmoud",
+            "email": "nouralhadi99@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nouralhadi\\Stemmer\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nouralhadi\\Stemmer\\StemmerServiceProvider"
+            ]
+        }
+    }
+}
