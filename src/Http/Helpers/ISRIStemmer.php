@@ -197,6 +197,10 @@ class ISRIStemmer {
         else if (in_array($word[6].$word[7], $this->pr4[3])){
             $word = mb_substr($word,0,mb_strlen($word)-1);
         }
+        /* أفعل */
+        else if ($word[0].$word[1] == 'أ'){
+            $word = $this->generate_from_indexes($word,1,2,3);
+        }
         else{
             $word = $this->suf1($word);
             if (mb_strlen($word) == 4){
