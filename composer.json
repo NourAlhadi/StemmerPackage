@@ -1,6 +1,6 @@
 {
     "name": "nouralhadi/stemmer",
-    "description": "The first free open source Arabic stemmer ever written in PHP implementing ISRI algorithm",
+    "description": "The first free open source Arabic stemmer ever written in PHP for Laravel framework implementing ISRI algorithm",
     "type": "library",
     "license": "GPL-3.0-or-later",
     "authors": [

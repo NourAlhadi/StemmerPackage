@@ -45,7 +45,7 @@ class ISRIStemmer {
     }
 
     // Hamza and Tashkeel
-    private $re_short_vowels = ['ً' , ' ٌ' ,'ٍ' ,'َ' ,'ُ' ,'ِ' ,'ّ' ,'ْ'];
+    private $re_short_vowels = ['ٌ' , 'ُ' , 'ً' , 'َ' , 'ٍ' , 'ِ' , 'ّ' , 'ْ'];
     private $re_initial_hamza = ['إ','آ', 'ئ', 'ؤ', 'ء'];
 
     // Stop Words
