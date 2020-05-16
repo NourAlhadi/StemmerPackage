@@ -53,10 +53,26 @@ class ISRIStemmer {
         'يكون','وليس','وكان','كذلك','التي','وبين','عليها','مساء','الذي','وكانت','ولكن','والتي','تكون','اليوم','اللذين','عليه','كانت','لذلك','أمام','هناك','منها','مازال','لازال','لايزال','مايزال','اصبح','أصبح','أمسى','امسى','أضحى','اضحى','مابرح','مافتئ','ماانفك','لاسيما','ولايزال','الحالي','اليها','الذين','فانه','والذي','وهذا','لهذا','فكان','ستكون','اليه','يمكن','بهذا','الذى', 'الله'
     ];
 
+    // Checking if not MBString no need to stem
+    function is_all_multibyte($string) {
+        // check if the string doesn't contain invalid byte sequence
+        if (mb_check_encoding($string, 'UTF-8') === false) return false;
+        $length = mb_strlen($string, 'UTF-8');
+        for ($i = 0; $i < $length; $i += 1) {
+            $char = mb_substr($string, $i, 1, 'UTF-8');
+            // check if the string doesn't contain single character
+            if (mb_check_encoding($char, 'ASCII')) {
+                return false;
+            }
+        }
+        return true;
+    }   
 
 
     // Stemming a word token using the ISRI stemmer.
     public function stem($token){
+        // If not all multibyte return without stemming
+        if (!$this->is_all_multibyte($token)) return $token;
 
         // Remove Tashkeel
         $token = $this->norm($token, 1);
