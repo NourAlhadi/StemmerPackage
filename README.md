@@ -12,7 +12,7 @@ Please note that this is just the beginning, and I'm willing to continue buildin
 
 You can install this package using composer: 
 
-    composer require nouralhadi/laravel-stemmer
+    composer require nouralhadi/stemmer
    
 For Laravel < 5.5, You should add the package to your service providers array in `config/app.php`:
 
